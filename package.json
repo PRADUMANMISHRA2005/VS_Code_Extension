@@ -1,0 +1,27 @@
+{
+    "name": "project-wizard",
+    "displayName": "Project Wizard",
+    "description": "Generate project folder structures and analyze code complexity.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "main": "./out/extension.js",
+    "activationEvents": [
+        "onCommand:project-wizard.createProject"
+    ],
+    "contributes": {
+        "commands": [{
+            "command": "project-wizard.createProject",
+            "title": "Project Wizard: Create Project"
+        }]
+    },
+    "scripts": {
+        "compile": "tsc"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.0",
+        "@types/vscode": "^1.90.0",
+        "typescript": "^5.0.0"
+    }
+}
