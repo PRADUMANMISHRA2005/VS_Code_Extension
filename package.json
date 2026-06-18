@@ -1,27 +1,51 @@
 {
-    "name": "project-wizard",
-    "displayName": "Project Wizard",
-    "description": "Generate project folder structures and analyze code complexity.",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.90.0"
-    },
-    "main": "./out/extension.js",
-    "activationEvents": [
-        "onCommand:project-wizard.createProject"
+  "name": "project-wizard",
+  "displayName": "Project Wizard",
+  "description": "Generate project folder structures and analyze code complexity.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "project-wizard.createProject",
+        "title": "Project Wizard: Create Project"
+      },
+      {
+        "command": "project-wizard.analyzeComplexity",
+        "title": "Project Wizard: Analyze Complexity",
+        "icon": "$(graph)"
+      }
     ],
-    "contributes": {
-        "commands": [{
-            "command": "project-wizard.createProject",
-            "title": "Project Wizard: Create Project"
-        }]
+    "menus": {
+      "editor/title": [
+        {
+          "command": "project-wizard.analyzeComplexity",
+          "group": "navigation"
+        }
+      ]
     },
-    "scripts": {
-        "compile": "tsc"
-    },
-    "devDependencies": {
-        "@types/node": "^24.0.0",
-        "@types/vscode": "^1.90.0",
-        "typescript": "^5.0.0"
+    "configuration": {
+      "title": "Project Wizard",
+      "properties": {
+        "projectWizard.geminiApiKey": {
+          "type": "string",
+          "description": "Your Gemini API key for complexity analysis"
+        }
+      }
     }
+  },
+  "scripts": {
+    "compile": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
+  }
 }
