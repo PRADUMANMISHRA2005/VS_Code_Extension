@@ -3,6 +3,12 @@
   "displayName": "Project Wizard",
   "description": "Generate project folder structures and analyze code complexity.",
   "version": "0.0.1",
+  "author": "Praduman Mishra and Aayush Yadav",
+  "contributors": [
+    {
+      "name": "Aayush Yadav"
+    }
+  ],
   "engines": {
     "vscode": "^1.90.0"
   },
